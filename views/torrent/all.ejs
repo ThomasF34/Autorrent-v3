@@ -1,5 +1,9 @@
 <%- include('../partials/header') %>
-  <h1>Results</h1>
+  <div>
+    <h2>Search again</h2>
+    <%- include('./form') %>
+  </div>
+  <h1 class="mb-2">Results</h1>
   <div class="row row-cols-1 row-cols-md-2">
     <% torrents.forEach( torrent => { %>
       <%- include('./card', { torrent }) %>
