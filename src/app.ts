@@ -56,9 +56,14 @@ torrentResearch.action(/\d+/, async (ctx) => {
 
   const torrent = torrents[parseInt(index)];
   const magnet = await getMagnet(torrent);
-  downloadMagnet(magnet);
-  console.log(await getTorrentData());
-  ctx.replyWithMarkdown(`Downloading ${magnet}`);
+  const res = await downloadMagnet(magnet);
+
+  if(res.result === "success"){
+    ctx.reply('✅ Download in progress ✅');
+  } else {
+    ctx.reply('❌ Download failed ❌');
+  }
+  return leave();
 });
 
 

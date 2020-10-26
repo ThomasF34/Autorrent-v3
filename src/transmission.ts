@@ -1,11 +1,15 @@
-import { Transmission } from '@ctrl/transmission';
+import { Transmission } from '@mjr/transmission';
+
+if(!process.env.TRANSMISSION_ADDR){
+  throw new Error("Please provide a TRANSMISSION_ADDR env var");
+}
 
 const client = new Transmission({
-  baseUrl: 'http://openvpn-transmission:9091/',
+  baseUrl: `http://${process.env.TRANSMISSION_ADDR}:9091/`,
 });
 
 export function downloadMagnet(magnet: string){
-  return client.addTorrent(magnet);
+  return client.addTorrent(undefined, { 'filename': magnet, 'download-dir': '/data/Films' });
 }
 
 export function getTorrentData(){
