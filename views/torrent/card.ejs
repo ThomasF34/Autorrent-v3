@@ -1,0 +1,31 @@
+<div class="col">
+  <div class="card mb-4">
+    <div class="card-header">
+      <h5><%- torrent.title %></h5>
+    </div>
+    <div class="card-body">
+      <h6 class="card-subtitle">
+        <span>
+          Seeds <span class="badge badge-success badge-pill"><%- torrent.seeds %></span>
+        </span>
+        <span class="float-right">
+          Size <span class="badge badge-primary badge-pill"><%- torrent.size %></span>
+        </span>
+      </h6>
+    </div>
+    <div class="card-footer text-muted">
+      <span>
+        <%- torrent.time %>
+      </span>
+      <form class="float-right mb-0" action='/magnet'>
+        <input hidden name="magnet" value='<%- torrent.magnet %>' />
+        <input
+          class='float-right btn btn-primary'
+          type="submit"
+          value="Download"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,8 @@
+<%- include('../partials/header') %>
+  <h1>Results</h1>
+  <div class="row row-cols-1 row-cols-md-2">
+    <% torrents.forEach( torrent => { %>
+      <%- include('./card', { torrent }) %>
+    <% }); %>
+  </div>
+<%- include('../partials/footer') %>

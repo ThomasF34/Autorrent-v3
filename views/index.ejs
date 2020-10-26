@@ -1,0 +1,11 @@
+<%- include('./partials/header') %>
+  <h1>Media Searcher</h1>
+  <form method="GET" action="/torrents">
+    <div class="form-group">
+      <label for="input_movie">Name of the movie</label>
+      <input name="torrent" type="text" class="form-control" id="input_movie" aria-describedby="input_movie_help">
+      <small id="input_movie_help" class="form-text text-muted">We'll check for available torrents</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+<%- include('./partials/footer') %>
