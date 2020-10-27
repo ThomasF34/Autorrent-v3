@@ -1,4 +1,4 @@
-import { Transmission } from '@mjr/transmission';
+import { Transmission } from '@thomasf34/transmission';
 
 if(!process.env.TRANSMISSION_ADDR){
   throw new Error("Please provide a TRANSMISSION_ADDR env var");
