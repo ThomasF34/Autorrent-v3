@@ -1,4 +1,4 @@
-import { Transmission } from '@thomasf34/transmission';
+import { Transmission } from '@ctrl/transmission';
 
 if(!process.env.TRANSMISSION_ADDR){
   throw new Error("Please provide a TRANSMISSION_ADDR env var");
@@ -9,7 +9,7 @@ const client = new Transmission({
 });
 
 export function downloadMagnet(magnet: string){
-  return client.addTorrent(undefined, { 'filename': magnet, 'download-dir': '/data/Films' });
+  return client.addMagnet(magnet, { 'download-dir': '/data/Films' });
 }
 
 export function getTorrentData(){
